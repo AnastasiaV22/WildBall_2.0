@@ -3,32 +3,25 @@ using WildBall.Inputs;
 
 public class InteractionZoneController : MonoBehaviour
 {
-    InputController inputController;
-    UIController uiController;
+
+    InteractionManager interactionManager;
 
     [SerializeField] InteractableObject parentObject;
 
     private void Awake()
     {
-        inputController = FindObjectOfType<InputController>();
-        uiController = FindObjectOfType<UIController>();
+        parentObject = GetComponentInParent<InteractableObject>();
+        interactionManager = FindObjectOfType<InteractionManager>();
 
-        if (inputController != null )
-        {
-            Debug.Log("InputController found");
-        }
-        if (uiController != null)
-        {
-            Debug.Log("uiController found");
-        }
+        parentObject.UsageStarted.AddListener(DisableInteractionArea);
+        parentObject.UsageEnded.AddListener(EnableInteractionArea);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            inputController.InteractionActivated.AddListener(parentObject.StartInteraction);
-            uiController?.ShowHelpMessage(parentObject.objectType, parentObject.canBeUsed);
+            interactionManager.AddNewInteractableObject(parentObject);
 
         }
     }
@@ -37,30 +30,25 @@ public class InteractionZoneController : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            inputController.InteractionActivated.RemoveListener(parentObject.StartInteraction);
+            interactionManager.RemoveInteractableObject(parentObject);
         }
 
     }
 
-    public void DestroyInteractionArea()
+    private void DisableInteractionArea()
     {
-        //close dialog windows
-    }
-    /*
-    private void Interaction()
-    {
-        inputController.InteractionActivated.AddListener(parentObject.StartInteraction);
-        uiController.ShowHelpMessage(parentObject.objectType, parentObject.canBeUsed);
+        interactionManager.RemoveInteractableObject(parentObject);
+        GetComponent<Collider>().enabled = false;
     }
 
-    private void ExitZone()
+    private void EnableInteractionArea()
     {
-        inputController.InteractionActivated.RemoveListener(parentObject.StartInteraction);
-        uiController.HideHelpMessage();
+        if ((parentObject.isSingleUse && parentObject.isUsed))
+        {
+            return;
+        }
+        GetComponent<Collider>().enabled = true;
     }
-    */
-
-
 
 
 }

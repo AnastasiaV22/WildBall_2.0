@@ -38,7 +38,7 @@ namespace WildBall.Inputs
         {
             if (vertDirection > 0)
             {
-                deceleration = 1;
+                deceleration = 1f;
             }
             else if (vertDirection < 0)
             {

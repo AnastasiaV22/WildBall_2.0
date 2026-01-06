@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum TypeOfInteractableObject
 {
@@ -28,6 +29,9 @@ public abstract class InteractableObject : MonoBehaviour
 
     internal AudioSource audioSource;
 
+    public UnityEvent UsageStarted;
+    public UnityEvent UsageEnded;
+
     private void Awake()
     {
 
@@ -52,4 +56,16 @@ public abstract class InteractableObject : MonoBehaviour
     public abstract void StartInteraction();
 
     public abstract void EndInteraction();
+
+    internal void StartUsing()
+    {
+        inUse = true;
+        UsageStarted?.Invoke();
+    }
+    internal void EndUsing()
+    {
+        inUse = false; 
+        isUsed = !isUsed;
+        UsageEnded?.Invoke();
+    }
 }

@@ -49,7 +49,7 @@ public class DoorController : InteractableObject
     private void ChangeDoorState()
     {
         canBeUsed = false;
-        inUse = true;
+        StartUsing();
         doorAnimator.SetTrigger("ChangeStateTrigger");
     }
 
@@ -66,6 +66,6 @@ public class DoorController : InteractableObject
         {
             canBeUsed = isSingleUse ? false : true;
         }
-        inUse = false;
+        EndUsing();
     }
 }

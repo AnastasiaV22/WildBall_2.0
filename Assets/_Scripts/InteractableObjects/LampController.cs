@@ -9,6 +9,8 @@ public class LampController : InteractableObject
     [SerializeField] private GameObject lightPref;
     [SerializeField] private GameObject darkPref;
 
+    [SerializeField] private GameObject hasDeactivationAction;
+
     private void Awake()
     {
         objectType = TypeOfInteractableObject.Lamp;

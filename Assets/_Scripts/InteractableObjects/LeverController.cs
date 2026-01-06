@@ -50,12 +50,14 @@ public class LeverController : InteractableObject
     }
     private IEnumerator WaitForAnimationEndTrigger()
     {
+        StartUsing();
         while (leverAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
         {
             Debug.Log(leverAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             yield return null;
         }
 
+        EndUsing();
         isUsed = !isUsed;
         canBeUsed = isSingleUse ? false : true;
         thisTriggerController?.UseTrigger();

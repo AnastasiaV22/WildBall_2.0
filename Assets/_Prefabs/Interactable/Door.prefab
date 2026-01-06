@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 3066461882458551057}
   - {fileID: 2381440908243709518}
+  - {fileID: 4790601624719155159}
   - {fileID: 4657026958717379481}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72,11 +73,78 @@ MonoBehaviour:
   isSingleUse: 1
   canBeUsed: 1
   isUsed: 0
-  activateByTrigger: 1
+  activateByTrigger: 0
   triggerController: {fileID: 0}
   doorAnimator: {fileID: 7421101886804939322}
   DoorOpenSound: {fileID: 8300000, guid: f304093a3f633484887941907140e656, type: 3}
   DoorCloseSound: {fileID: 8300000, guid: 4fa1ee78e1711b44185f114475a1fd51, type: 3}
+--- !u!1 &3215454841088403669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4790601624719155159}
+  - component: {fileID: 7611924441945258271}
+  - component: {fileID: 5618785288249917088}
+  m_Layer: 0
+  m_Name: InteractableZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4790601624719155159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3215454841088403669}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.45554686, y: 0.34299207, z: -1.1004204}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2373258835373751007}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7611924441945258271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3215454841088403669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abba6d4aa79047c449d022deaeaf2f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentObject: {fileID: 0}
+--- !u!65 &5618785288249917088
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3215454841088403669}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.3258042, y: 2.0331848, z: 2.3419466}
+  m_Center: {x: -0.4641056, y: 0.5165926, z: 1.1354198}
 --- !u!1 &5217710792841894918
 GameObject:
   m_ObjectHideFlags: 0

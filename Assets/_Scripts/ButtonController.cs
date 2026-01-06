@@ -58,7 +58,7 @@ public class ButtonTriggerController : MonoBehaviour
     private void ReleaseButton()
     {
         buttonAnimator.SetTrigger("ReleaseButtonTrigger");
-        thisTriggerController.UseTrigger();
+        //thisTriggerController.UseTrigger();
     }
 
     private void PlayButtonSound()

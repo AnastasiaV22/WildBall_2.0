@@ -17,6 +17,8 @@ public class TriggerController : MonoBehaviour
     public UnityEvent TriggerActivated;
     public UnityEvent TriggerDeactivated;
 
+
+
     private bool isUsed;
 
 
