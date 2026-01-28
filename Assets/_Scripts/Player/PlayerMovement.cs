@@ -10,16 +10,19 @@ namespace WildBall.Inputs
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float speed = 10f;
+        [SerializeField] private float backSpeed = 10f;
         [SerializeField] private float turnSpeed = 20f;
         [SerializeField, Range(0, 20)] private float jumpForce = 10f;
 
-        [SerializeField] private float maxSpeed = 50f;
+        [SerializeField] private float maxSpeed = 10f;
 
         private Rigidbody playerRB;
-
+         
         private bool isGrounded = true;
 
         private float deceleration = 1;
+        
+        float currentspeed = 0;
 
         private void Awake()
         {
@@ -30,32 +33,56 @@ namespace WildBall.Inputs
             inputController.PlayerJumped.AddListener(PlayerJump);
 
             playerRB = GetComponent<Rigidbody>();
-            playerRB.maxAngularVelocity = maxSpeed;
+            playerRB.maxLinearVelocity = maxSpeed;
         }
 
         // -1 назад, 1 вперед
         public void MoveCharacter(float vertDirection, float horDirection)
         {
+
             if (vertDirection > 0)
             {
-                deceleration = 1f;
+                currentspeed = speed;
+
             }
             else if (vertDirection < 0)
             {
-                deceleration = 0.5f;
+                currentspeed = -backSpeed;
+            }
+            else
+            {
+                currentspeed = Mathf.Lerp(0, currentspeed, 0.7f);
+            }
+
+            playerRB.AddForce(transform.forward * currentspeed * deceleration, ForceMode.Force);
+
+            if (horDirection != 0)
+            {
+                playerRB.AddForce(transform.right * horDirection * speed * deceleration, ForceMode.Force);
             }
 
             if (!isGrounded)
             {
-                deceleration /= 2;
+                deceleration = 0.5f;
             }
-            
-            playerRB.AddForce(transform.forward * vertDirection * speed * deceleration, ForceMode.Force);
-            
-            if (horDirection != 0)
+            else
             {
-                playerRB.AddForce(transform.right * horDirection * speed, ForceMode.Force);
+                deceleration = 1f;
             }
+          
+            Vector3 velocity = playerRB.velocity;
+            velocity.y = 0;
+            if (velocity.magnitude > maxSpeed)
+            {
+                
+                velocity = velocity.normalized * maxSpeed;
+                velocity.y = playerRB.velocity.y;
+                playerRB.velocity = velocity;
+            }
+
+
+
+
         }
 
         public void RotateCharacter(float rotation)
@@ -80,7 +107,7 @@ namespace WildBall.Inputs
             }
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionStay(Collision collision)
         {
             if (!isGrounded && collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {

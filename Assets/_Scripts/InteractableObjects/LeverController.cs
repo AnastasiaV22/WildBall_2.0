@@ -23,15 +23,22 @@ public class LeverController : InteractableObject
 
     public override void StartInteraction()
     {
-        if (canBeUsed)
+        if (inUse)
         {
-            Debug.Log("Lever used");
-            ChangeLeverState();
-                   
+            // 
         }
         else
         {
-            Debug.Log("Lever cant be used");
+            if (canBeUsed)
+            {
+                Debug.Log("Lever used");
+                ChangeLeverState();
+
+            }
+            else
+            {
+                Debug.Log("Lever cant be used");
+            }
         }
     }
 
@@ -44,22 +51,23 @@ public class LeverController : InteractableObject
     private void ChangeLeverState()
     {
         canBeUsed = false;
+
+        StartUsing();
         leverAnimator.SetTrigger("ChangeStateTrigger");
 
         StartCoroutine(WaitForAnimationEndTrigger());
     }
     private IEnumerator WaitForAnimationEndTrigger()
     {
-        StartUsing();
         while (leverAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
         {
             Debug.Log(leverAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             yield return null;
         }
 
-        EndUsing();
         isUsed = !isUsed;
         canBeUsed = isSingleUse ? false : true;
+        EndUsing();
         thisTriggerController?.UseTrigger();
     }
 

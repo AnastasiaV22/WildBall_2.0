@@ -59,13 +59,11 @@ public class DoorController : InteractableObject
         audioSource.Play();
     }
 
-    void onAnimationEnd()
+    void OnAnimationEnd()
     {
         doorIsOpen = !doorIsOpen;
-        if (!activateByTrigger)
-        {
-            canBeUsed = isSingleUse ? false : true;
-        }
+        canBeUsed = isSingleUse ? false : true;
+        
         EndUsing();
     }
 }

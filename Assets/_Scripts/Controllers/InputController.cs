@@ -24,6 +24,12 @@ namespace WildBall.Inputs
 
         public UnityEvent InteractionActivated;
 
+
+        private void Awake()
+        {
+         //   DontDestroyOnLoad(transform.gameObject);
+        }
+
         private void Update()
         {
             if (inGame)
