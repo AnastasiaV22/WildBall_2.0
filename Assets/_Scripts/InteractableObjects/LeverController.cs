@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,10 @@ public class LeverController : InteractableObject
 
     TriggerController thisTriggerController;
 
-   
+
+    // —Œ—“ŒﬂÕ»≈ Ó·˙ÂÍÚ‡
+    private bool leverUsed = false;
+
     private void Awake()
     {
         objectType = TypeOfInteractableObject.Lever;
@@ -59,21 +63,18 @@ public class LeverController : InteractableObject
     }
     private IEnumerator WaitForAnimationEndTrigger()
     {
-        while (leverAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
-        {
-            Debug.Log(leverAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-            yield return null;
-        }
+        int animationLenght = Convert.ToInt32(leverAnimator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(animationLenght);
 
-        isUsed = !isUsed;
+        thisTriggerController?.UseTrigger();
+        leverUsed = !leverUsed;
         canBeUsed = isSingleUse ? false : true;
         EndUsing();
-        thisTriggerController?.UseTrigger();
     }
 
     void PlaySound()
     {
-        audioSource.clip = !isUsed ? LeverDownSound : LeverUpSound;
+        audioSource.clip = !leverUsed ? LeverDownSound : LeverUpSound;
         audioSource.Play();
     }
 

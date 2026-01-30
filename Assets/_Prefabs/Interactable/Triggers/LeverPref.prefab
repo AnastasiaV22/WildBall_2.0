@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1577609632647162967, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1525402
+      value: -10.251508
       objectReference: {fileID: 0}
     - target: {fileID: 1577609632647162967, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1836812
+      value: -1.1836808
       objectReference: {fileID: 0}
     - target: {fileID: 1577609632647162967, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9064326
+      value: -7.312716
       objectReference: {fileID: 0}
     - target: {fileID: 1577609632647162967, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -91,6 +91,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3059259534647665435, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
     - {fileID: 4143286907326886112, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
+    - {fileID: 3441250790507345709, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
+    - {fileID: 3894559681439692825, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -126,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abba6d4aa79047c449d022deaeaf2f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentObject: {fileID: 7687032305380792203}
+  parentObject: {fileID: 0}
 --- !u!1 &8484283162437864866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2575938327731363396, guid: a0164d9c476080e449c72cf58e7709ab, type: 3}
@@ -149,6 +151,12 @@ MonoBehaviour:
   isUsed: 0
   activateByTrigger: 0
   triggerController: {fileID: 0}
+  UsageStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  UsageEnded:
+    m_PersistentCalls:
+      m_Calls: []
   leverAnimator: {fileID: 728087382145644681}
   LeverDownSound: {fileID: 0}
   LeverUpSound: {fileID: 0}

@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 5f;
 
     float maxCameraDistance = 10f;
-    float minCameraDistance = 2f;
+    //float minCameraDistance = 2f;
     float heightCamera = 2f;
 
     private Vector3 offset;

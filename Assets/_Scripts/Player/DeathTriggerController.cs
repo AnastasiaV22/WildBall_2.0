@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 
 public class DeathTriggerController : MonoBehaviour
 {
     private Animator animator;
-
-
+    
     private void Start()
     {
         // animator = GetComponent<Animator>();    
@@ -18,9 +18,7 @@ public class DeathTriggerController : MonoBehaviour
     {
         if (other.CompareTag("DeathZone"))
         {
-            // запуск анимации смерти
-            // ожидание конца анимации 
-            GameManager.GetInstance().EndGame();
+            GameManager.GetInstance().EndGame(false);
         }
     }
 }
