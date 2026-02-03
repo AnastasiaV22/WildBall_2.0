@@ -18,11 +18,11 @@ public class TrapsAnimationController : MonoBehaviour
 
     public void OnAnimationStart()
     {
-        animator.SetBool("IsDangerous", true);
+
     }
 
     public void OnAnimationEnd()
     {
-        animator.SetBool("IsDangerous", false);
+
     }
 }

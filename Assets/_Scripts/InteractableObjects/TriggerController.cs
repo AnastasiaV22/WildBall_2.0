@@ -7,6 +7,7 @@ public enum TriggerType
 {
     Lever,
     Button,
+    TriggerZone,
     None
 }
 
@@ -36,6 +37,7 @@ public class TriggerController : MonoBehaviour
 
     private void ActivateTrigger()
     {
+
         TriggerActivated.Invoke();
         ChangeTriggerState(); 
         Debug.Log($"{triggerType} TriggerActivated");

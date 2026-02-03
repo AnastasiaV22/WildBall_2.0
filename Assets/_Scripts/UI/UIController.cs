@@ -96,6 +96,7 @@ public class UIController : MonoBehaviour
 
     public void ShowGameoverPanel()
     {
+        Debug.Log($"{inGameUIPanel.IsUnityNull()}, {inGameUIPanel.activeSelf}");
         inGameUIPanel.SetActive(false);
         GameoverPanel.SetActive(true);
     }

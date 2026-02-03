@@ -107,7 +107,7 @@ namespace WildBall.Inputs
             }
         }
 
-        private void OnCollisionStay(Collision collision)
+        private void OnCollisionEnter(Collision collision)
         {
             if (!isGrounded && collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {

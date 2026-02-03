@@ -7,6 +7,7 @@ public enum TypeOfInteractableObject
     Gate,
     Lamp,
     Lever,
+    Portal,
     None
 }
 

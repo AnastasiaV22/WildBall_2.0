@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 936607691791448412}
   - component: {fileID: 7775590592734362813}
+  - component: {fileID: 2225745394490421482}
+  - component: {fileID: 7538840061007766555}
   m_Layer: 0
   m_Name: rootsTrap
-  m_TagString: Untagged
+  m_TagString: DeathZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,6 +60,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2225745394490421482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872168302023389696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9922074cd8bc48e458cbe9b8c5600374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7538840061007766555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872168302023389696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9922074cd8bc48e458cbe9b8c5600374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &363142404232028181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,6 +143,14 @@ PrefabInstance:
     - target: {fileID: 4282859828774290, guid: dd0f61a885c7eb349bebcfa27ef3d146, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -109.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452437062548621476, guid: dd0f61a885c7eb349bebcfa27ef3d146, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452437062548621476, guid: dd0f61a885c7eb349bebcfa27ef3d146, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -188,6 +222,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -114.073
       objectReference: {fileID: 0}
+    - target: {fileID: 6452437062548621476, guid: dd0f61a885c7eb349bebcfa27ef3d146, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452437062548621476, guid: dd0f61a885c7eb349bebcfa27ef3d146, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -257,6 +299,14 @@ PrefabInstance:
     - target: {fileID: 4428276057413450, guid: 5d788daea732b364bb3bc1330d4e792f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.738
+      objectReference: {fileID: 0}
+    - target: {fileID: 3377886239119989199, guid: 5d788daea732b364bb3bc1330d4e792f, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3377886239119989199, guid: 5d788daea732b364bb3bc1330d4e792f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -328,6 +378,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -147.967
       objectReference: {fileID: 0}
+    - target: {fileID: 6452437062548621476, guid: dd0f61a885c7eb349bebcfa27ef3d146, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452437062548621476, guid: dd0f61a885c7eb349bebcfa27ef3d146, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -397,6 +455,14 @@ PrefabInstance:
     - target: {fileID: 4282859828774290, guid: dd0f61a885c7eb349bebcfa27ef3d146, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -199.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452437062548621476, guid: dd0f61a885c7eb349bebcfa27ef3d146, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452437062548621476, guid: dd0f61a885c7eb349bebcfa27ef3d146, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
