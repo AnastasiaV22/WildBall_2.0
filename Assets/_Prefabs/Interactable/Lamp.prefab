@@ -51,9 +51,16 @@ MonoBehaviour:
   isUsed: 0
   activateByTrigger: 1
   triggerController: {fileID: 0}
+  UsageStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  UsageEnded:
+    m_PersistentCalls:
+      m_Calls: []
   isOn: 0
   lightPref: {fileID: 8469328774677637276}
   darkPref: {fileID: 2279899086197312842}
+  hasDeactivationAction: {fileID: 0}
 --- !u!1001 &1897503244573045349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,6 +69,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2315566474862455313}
     m_Modifications:
+    - target: {fileID: 101688392592688235, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 101688392592688235, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.357
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_ShadowRadius
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8060405944448375545, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
       propertyPath: m_Name
       value: LampOn
