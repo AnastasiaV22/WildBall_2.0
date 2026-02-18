@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -97,8 +98,15 @@ public class UIController : MonoBehaviour
     public void ShowGameoverPanel()
     {
         Debug.Log($"{inGameUIPanel.IsUnityNull()}, {inGameUIPanel.activeSelf}");
+        StartCoroutine(ShowGameoverPanelCoroutine());
+    }
+
+    IEnumerator ShowGameoverPanelCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
         inGameUIPanel.SetActive(false);
         GameoverPanel.SetActive(true);
+
     }
 
     public void ShowSuccsesEndGamePanel()

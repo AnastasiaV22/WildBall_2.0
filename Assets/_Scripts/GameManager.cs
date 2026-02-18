@@ -51,12 +51,10 @@ public class GameManager : MonoBehaviour
     public void EndGame(bool endedSucsesful)
     {
         inputController.DisableGameInput();
-        Time.timeScale = 0;
 
+       // Time.timeScale = 0;
         if (!endedSucsesful)
         {
-            //анимация смерти
-            // ожидание конца анимации 
             PlayerDied.Invoke();
         }
 

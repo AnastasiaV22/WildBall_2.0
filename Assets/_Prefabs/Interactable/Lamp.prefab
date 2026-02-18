@@ -71,19 +71,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101688392592688235, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 101688392592688235, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.356
       objectReference: {fileID: 0}
     - target: {fileID: 101688392592688235, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.357
+      value: 0.704
       objectReference: {fileID: 0}
     - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
       propertyPath: m_Range
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
       propertyPath: m_Intensity
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
       propertyPath: m_Lightmapping
@@ -102,6 +106,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220381725140086337, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
       propertyPath: m_Shadows.m_Strength
       value: 0.8
       objectReference: {fileID: 0}
@@ -111,7 +119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8060405944448375545, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8717893220990095113, guid: 7970c12d6b19a504fbc82353b8a43abe, type: 3}
       propertyPath: m_RootOrder
@@ -230,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6023421512005573601, guid: 7c3ceb5b9a32b7a4a8d42d30223f3c9b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

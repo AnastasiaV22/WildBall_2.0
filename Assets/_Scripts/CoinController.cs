@@ -10,10 +10,8 @@ public class CoinController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("Триггер");
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Debug.Log("Взята");
             DestroyObject();
             //animator.Play();
         }
@@ -21,9 +19,9 @@ public class CoinController : MonoBehaviour
 
     private void DestroyObject()
     {
+        animator.SetTrigger("DestroyCoinTrigger");
         explosion.Play();
         Destroy(gameObject, 0.5f);
 
-        Debug.Log("Уничтожена");
     }
 }
